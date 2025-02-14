@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/meet.css">
+    <title>Join Conference</title>
+</head>
+<body>
+    <div id="formContainer">
+        <h2>Join the Conference</h2>
+        <form id="userForm">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" required>
+    
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" required>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+    
+            <button type="submit">Join</button>
+        </form>
+    </div>
+
+    <div class="video-container" style="display: none;">
+        <!-- Главное видео (текущий пользователь) -->
+        <div id="localVideoContainer">
+            <video id="localVideo" autoplay></video>
+            <!-- Кнопки управления поверх видео -->
+            <div class="video-controls">
+                <button onclick="toggleCamera()"><i class="fas fa-video"></i></button>
+                <button onclick="toggleMicrophone()"><i class="fas fa-microphone"></i></button>
+                <button onclick="takeScreenshot()"><i class="fas fa-camera"></i></button>
+                <button onclick="startScreenShare()"><i class="fas fa-desktop"></i></button>
+            </div>
+        </div>
+    
+        <!-- Видео других участников -->
+        <div id="remoteVideos"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/simple-peer@9.11.0/simplepeer.min.js"></script>
+    <script src="../js/meet.js"></script>
+    <script src="https://kit.fontawesome.com/73ac4e980c.js" crossorigin="anonymous"></script>
+</body>
+</html>
